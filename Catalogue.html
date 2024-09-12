@@ -1,29 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Catalogue</title>
-    <link rel="stylesheet" href="catalogue.css">
-    <link rel="icon" href="bookicon.png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="icons/bookicon.png">
 </head>
 <body>
 
     <header>
-        <nav>
-            <div class="header-icons left-icons">
-                <a href="index.html"><img src="pnghome.png" alt="home icon"></a>
-                <a href="javascript:history.back()"><img src="back.png" alt="back icon"></a>
-            </div>
-        </nav>
-        <!-- вот здесь должна быть ссылка на твою страницу --> 
-    
         <div class="header-text">
-            <h1>Catalogue</h1>
+            <h1>Welcome to the E-Library</h1>
         </div>
-    
-        <div class="header-icons right-icons">
-            <img src="profile.png" alt="profile icon" class="profile-icon">
-        </div>        
-    </header>    
+    </header>
+        <nav>
+            <a href="elibrary.html"><img src="icons/pnghome.png" alt="home icon">Home</a>
+            <a href="Catalogue.html"><img src="icons/bookicon.png" alt="catalogue">Browse Catalogue</a>
+            <a href="Catalogue.html#contact-us"><img src="icons/contact.png" alt="contact us">Contact us</a>
+        </nav>
 
     <div class="genre-select">
         <form>
@@ -34,6 +29,7 @@
                 <option value="adventure">Adventure</option>
                 <option value="other">Other</option>
             </select>
+            <input type="submit" value="Search">
         </form>
         
         <form>
@@ -50,60 +46,48 @@
     <div class="book-container">
         <div class="book-section">
             <div class="book-image">
-                <img src="alittlelife.jpg" alt="A Little Life">
+                <img src="images/alittlelife.jpg" alt="A Little Life">
             </div>
-            <div class="book-title">A Little Life</div>
-            <div class="book-author">Hanya Yanagihara</div>
-            <div class="book-description">When four classmates from a small Massachusetts college move to New York to make their way, they're broke, adrift, and buoyed 
-                only by their friendship and ambition. There is kind, handsome Willem, an aspiring actor; JB, a quick-witted, sometimes cruel Brooklyn-born painter 
-                seeking entry to the art world; Malcolm, a frustrated architect at a prominent firm; and withdrawn, brilliant, enigmatic Jude, who serves as their 
-                center of gravity.
-
-                Over the decades, their relationships deepen and darken, tinged by addiction, success, and pride. Yet their greatest challenge, each comes to realize, 
-                is Jude himself, by midlife a terrifyingly talented litigator yet an increasingly broken man, his mind and body scarred by an unspeakable childhood, 
-                and haunted by what he fears is a degree of trauma that he’ll not only be unable to overcome—but that will define his life forever.</div>
+            <h3 style="margin: 5px;">A Little Life</h3>
+            <p style="margin: 5px; font-size: 16px;">Hanya Yanagihara</p>
+            <div style="margin-top: 25px;">
+Four college friends from a small Massachusetts school move to New York, driven by ambition and their deep bond, despite having little direction or money. Willem, JB, Malcolm, and Jude each pursue their dreams while their friendships evolve through challenges of addiction, pride, and success. At the heart of it all is Jude—brilliant yet deeply scarred by a traumatic past—whose unresolved pain threatens to shape all their lives.</div>
             <div class="button-container">
-                <button class="read-button">Read online</button>
-                <button class="listen-button">Listen online</button>
+                <button><a href="A Little Life.html">Open book page</a></button>
             </div>
         </div>
 
         <div class="book-section">
             <div class="book-image">
-                <img src="thebelljar.jpg" alt="The Bell Jar">
+                <img src="images/thebelljar.jpg" alt="The Bell Jar">
             </div>
-            <div class="book-title">The Bell Jar</div>
-            <div class="book-author">Sylvia Plath</div>
-            <div class="book-description">The Bell Jar chronicles the crack-up of Esther Greenwood: brilliant, beautiful, enormously talented, and successful, 
-                but slowly going under—maybe for the last time. Sylvia Plath masterfully draws the reader into Esther's breakdown with such intensity that Esther's 
-                insanity becomes completely real and even rational, as probable and accessible an experience as going to the movies. Such deep penetration into the 
-                dark and harrowing corners of the psyche is an extraordinary accomplishment and has made The Bell Jar a haunting American classic.</div>
+            <h3 style="margin: 5px;">The Bell Jar</h3>
+            <p style="margin: 5px; font-size: 16px;">Sylvia Plath</p>
+            <div style="margin-top: 25px;">
+                The Bell Jar chronicles the mental breakdown of Esther Greenwood: a young, brilliant, and talented woman who struggles with her identity and society's expectations. As she navigates her world, her emotional state deteriorates, plunging her into depression and disillusionment. Sylvia Plath’s haunting exploration of mental illness and the human psyche remains one of the most impactful works of American literature.
+            </div>
             <div class="button-container">
-                <button class="read-button"><a href="The Bell Jar.html">Read online</a></button>
-                <button class="listen-button">Listen online</button>
+                <button><a href="The Bell Jar.html">Open book page</a></button>
             </div>
         </div>
 
         <div class="book-section">
             <div class="book-image">
-                <img src="schoolgirl.jpg" alt="Schoolgirl">
+                <img src="images/schoolgirl.jpg" alt="Schoolgirl">
             </div>
-            <div class="book-title">Schoolgirl</div>
-            <div class="book-author">Osamu Dazai</div>
-            <div class="book-description">Osamu Dazai's 1939 novella depicts a day in the life of a Tokyo schoolgirl. Propelling Dazai into the literary elite of
-                 post-war Japan, Schoolgirl gained notoriety for its ironic and inventive use of language. Now it illuminates the prevalent social structures of
-                  a lost time, as well as the struggle of the individual against "them" -- a theme that occupied Dazai's life both personally and professionally. 
-                  This new translation preserves the playful language of the original and offers the reader a new window into the mind of one of the greatest Japanese 
-                  authors of the 20th century.</div>
+            <h3 style="margin: 5px;">Schoolgirl</h3>
+            <p style="margin: 5px; font-size: 16px;">Osamu Dazai</p>
+            <div style="margin-top: 25px;">
+                Osamu Dazai's 1939 novella, Schoolgirl, explores a day in the life of a Tokyo schoolgirl and helped establish him as a literary figure in post-war Japan. Renowned for its ironic language and its depiction of an individual's struggle against societal norms, this new translation captures Dazai's unique style, offering a fresh perspective on one of Japan's most notable authors.
+                </div>
             <div class="button-container">
-                <button class="read-button">Read online</button>
-                <button class="listen-button">Listen online</button>
+                <button><a href="Schoolgirl.html">Open book page</a></button>
             </div>
         </div>
     </div>
 
-    <section class="contact-section">
-        <form action="submit_form.php" method="POST">
+    <section id="contact-us" class="contact-section">
+        <form action="Catalogue.html#contact-us">
             <h2>Contact Us</h2>
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" required>
