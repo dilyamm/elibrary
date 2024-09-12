@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Catalogue</title>
+    <link rel="stylesheet" href="catalogue.css">
+    <link rel="icon" href="bookicon.png">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="header-icons left-icons">
+                <a href="index.html"><img src="pnghome.png" alt="home icon"></a>
+                <a href="javascript:history.back()"><img src="back.png" alt="back icon"></a>
+            </div>
+        </nav>
+        <!-- вот здесь должна быть ссылка на твою страницу --> 
+    
+        <div class="header-text">
+            <h1>Catalogue</h1>
+        </div>
+    
+        <div class="header-icons right-icons">
+            <img src="profile.png" alt="profile icon" class="profile-icon">
+        </div>        
+    </header>    
+
+    <div class="genre-select">
+        <form>
+            <label for="genres">Select a genre:</label>
+            <select id="genres" name="genres">
+                <option value="recommendations">Recommendations</option>
+                <option value="romance">Romance</option>
+                <option value="adventure">Adventure</option>
+                <option value="other">Other</option>
+            </select>
+        </form>
+        
+        <form>
+            <input type="text" name="text" class="search" placeholder="Search by author">
+            <input type="submit" value="Search">
+        </form>
+        
+        <form>
+            <input type="text" name="text" class="search" placeholder="Search by name">
+            <input type="submit" value="Search">
+        </form>
+    </div>
+
+    <div class="book-container">
+        <div class="book-section">
+            <div class="book-image">
+                <img src="alittlelife.jpg" alt="A Little Life">
+            </div>
+            <div class="book-title">A Little Life</div>
+            <div class="book-author">Hanya Yanagihara</div>
+            <div class="book-description">When four classmates from a small Massachusetts college move to New York to make their way, they're broke, adrift, and buoyed 
+                only by their friendship and ambition. There is kind, handsome Willem, an aspiring actor; JB, a quick-witted, sometimes cruel Brooklyn-born painter 
+                seeking entry to the art world; Malcolm, a frustrated architect at a prominent firm; and withdrawn, brilliant, enigmatic Jude, who serves as their 
+                center of gravity.
+
+                Over the decades, their relationships deepen and darken, tinged by addiction, success, and pride. Yet their greatest challenge, each comes to realize, 
+                is Jude himself, by midlife a terrifyingly talented litigator yet an increasingly broken man, his mind and body scarred by an unspeakable childhood, 
+                and haunted by what he fears is a degree of trauma that he’ll not only be unable to overcome—but that will define his life forever.</div>
+            <div class="button-container">
+                <button class="read-button">Read online</button>
+                <button class="listen-button">Listen online</button>
+            </div>
+        </div>
+
+        <div class="book-section">
+            <div class="book-image">
+                <img src="thebelljar.jpg" alt="The Bell Jar">
+            </div>
+            <div class="book-title">The Bell Jar</div>
+            <div class="book-author">Sylvia Plath</div>
+            <div class="book-description">The Bell Jar chronicles the crack-up of Esther Greenwood: brilliant, beautiful, enormously talented, and successful, 
+                but slowly going under—maybe for the last time. Sylvia Plath masterfully draws the reader into Esther's breakdown with such intensity that Esther's 
+                insanity becomes completely real and even rational, as probable and accessible an experience as going to the movies. Such deep penetration into the 
+                dark and harrowing corners of the psyche is an extraordinary accomplishment and has made The Bell Jar a haunting American classic.</div>
+            <div class="button-container">
+                <button class="read-button"><a href="bookpage.html">Read online</a></button>
+                <button class="listen-button">Listen online</button>
+            </div>
+        </div>
+
+        <div class="book-section">
+            <div class="book-image">
+                <img src="schoolgirl.jpg" alt="Schoolgirl">
+            </div>
+            <div class="book-title">Schoolgirl</div>
+            <div class="book-author">Osamu Dazai</div>
+            <div class="book-description">Osamu Dazai's 1939 novella depicts a day in the life of a Tokyo schoolgirl. Propelling Dazai into the literary elite of
+                 post-war Japan, Schoolgirl gained notoriety for its ironic and inventive use of language. Now it illuminates the prevalent social structures of
+                  a lost time, as well as the struggle of the individual against "them" -- a theme that occupied Dazai's life both personally and professionally. 
+                  This new translation preserves the playful language of the original and offers the reader a new window into the mind of one of the greatest Japanese 
+                  authors of the 20th century.</div>
+            <div class="button-container">
+                <button class="read-button">Read online</button>
+                <button class="listen-button">Listen online</button>
+            </div>
+        </div>
+    </div>
+
+    <section class="contact-section">
+        <form action="submit_form.php" method="POST">
+            <h2>Contact Us</h2>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Your message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>Made by: Muratova Dilnaz, Berentayeva Darina</p>
+    </footer>
+    
+</body>
+</html>
