@@ -270,6 +270,15 @@ input[type="text"] {
     margin: 0 auto;
 }
 
+#slider-book img {
+    height: 250px;
+}
+
+#slider-book {
+    margin: 0 25px;
+    margin-bottom: 100px;
+}
+
 .book-section {
     display: flex;
     flex-direction: column;
