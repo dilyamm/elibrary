@@ -1,13 +1,10 @@
 body {
     font-family: 'Georgia', serif;
-    margin: 0;
-    padding: 0;
     background-color: #f5f0e1;
     color: #3e3c38;
 }
 
 header {
-    padding: 20px 0;
     background-color: #dcd3c0;
     color: #3e3c38;
     text-align: center;
@@ -21,7 +18,6 @@ header {
 nav {
     background-color: #f6f1e5;
     border: 1px solid #dcd3c0;
-    padding: 10px;
     text-align: center;
     height: 70px;
 }
