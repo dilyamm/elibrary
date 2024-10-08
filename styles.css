@@ -503,12 +503,17 @@ button a {
     border: 1px solid #ced4da;
 }
 
+#todo-list li span {
+    flex-grow: 1;
+}
+
 .completed {
     text-decoration: line-through;
     color: grey;
 }
 
 .list-group-item button {
+    max-width: 180px;
     background-color: red;
     border: none;
     padding: 6px 10px;
@@ -522,6 +527,7 @@ button a {
 }
 
 .list-group-item .mark-completed {
+    max-width: 180px;
     background-color: #4CAF50;
     margin: 0 20px;
 }
