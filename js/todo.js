@@ -2,7 +2,10 @@ document.getElementById("todo-form").addEventListener("submit", function(event) 
     event.preventDefault();
 
     const taskText = document.getElementById("new-task").value;
-    if (taskText === "") return;
+    if (taskText === "") {
+        showError("Please enter a book name!");
+        return false;
+    }
 
     const listItem = document.createElement("li");
     listItem.className = "list-group-item";

@@ -68,6 +68,7 @@ nav img {
 .todo-section {
     padding: 40px 20px;
     text-align: center;
+    position: relative;
 }
 
 .intro-text h2 {
@@ -430,7 +431,7 @@ button a {
 }
 
 .error-message-container {
-    position: absolute;
+    position: fixed;
     top: 20px;
     right: 20px;
     background-color: #d9534f;
@@ -451,10 +452,10 @@ button a {
 }
 
 .success-message-container {
-    position: absolute;
+    position: fixed;
     top: 20px;
     right: 20px;
-    background-color: #5cb85c; /* Зеленый цвет для успеха */
+    background-color: #5cb85c;
     padding: 10px;
     border-radius: 5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);

@@ -40,13 +40,12 @@ function clearForm() {
     document.getElementById('message').value = '';
 }
 
-function validateForm() {
+document.getElementById('contact-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    
     const name = document.getElementById('name').value.trim();
     const email = document.getElementById('email').value.trim();
     const message = document.getElementById('message').value.trim();
-    const errorMessageContainer = document.getElementById('error-message-container');
-    
-    errorMessageContainer.style.display = 'none';
 
     var nameParts = name.split(" ");
     if (nameParts.length < 2 || nameParts.some(part => part === "")) {
@@ -68,10 +67,4 @@ function validateForm() {
     showSuccess("Your message has been sent successfully!");
 
     clearForm();
-    
-    return true;
-}
-
-document.getElementById('contact-form').addEventListener('submit', function(event) {
-    event.preventDefault();
 });
