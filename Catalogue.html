@@ -103,6 +103,24 @@
         </div>
     </div>
 
+    <section class="todo-section">
+        <div class="intro-text">
+            <h2>Manage your reading list</h2>
+            <p>Here you can add books to your reading list, mark them as read, or remove them once finished</p>
+        </div>
+        <div class="todo-container">
+            <h3>Add a New Book</h3>
+            <form id="todo-form">
+                <input type="text" id="new-task" placeholder="Enter book title..." required>
+                <button class="btn" type="submit">Add Book</button>
+            </form>
+            <h3>Your list</h3>
+            <ul id="todo-list" class="list-group"></ul>
+        </div>
+
+        <script src="js/todo.js"></script>
+    </section>
+    
     <section id="contact-us" class="contact-section">
         <form id="contact-form" action="Catalogue.html#contact-us" onsubmit="return validateForm()" novalidate>
             <h2>Contact Us</h2>
