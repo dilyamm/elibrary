@@ -537,6 +537,17 @@ button a {
     background-color: #45a049;
 }
 
+.bg-color-1 { background-color: #ece6d9; }
+.bg-color-2 { background-color: #dcd3c0; }
+.bg-color-3 { background-color: #f6f1e5; }
+.bg-color-4 { background-color: #f5f0e1; }
+.bg-color-5 { background-color: #9a8c78; }
+.bg-color-6 { background-color: #7b6b5a; }
+.bg-color-7 { background-color: #5c5244; }
+.bg-color-8 { background-color: #3e3c38; }
+.bg-color-9 { background-color: #fffdf6; }
+.bg-color-10 { background-color: #888577; }
+
 footer {
     background-color: #f0f0f0;
     color: #333;
