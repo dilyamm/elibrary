@@ -55,49 +55,65 @@
      </div>
     
     <section class="container mt-4">
-        <h2>Random background color</h2>
-        <p>Click the button below to randomly change the background color of whole website</p>
-        <button id="randomColorBtn" class="btn" style="width: 300px;">Change background Color</button>
-        <button id="resetColorBtn" class="btn" style="width: 300px;">Reset</button>
-    </section>
-
-    <section class="container mt-4">
-        <form id="sorting-form">
-            <div class="mb-3">
-                <label for="numbersInput" class="form-label">Enter numbers:</label>
-                <input type="text" id="numbersInput" class="form-control" placeholder="4, 3, 9, 1, 7">
+        <div class="row justify-content-center">
+            <div class="col-6">
+                <h2>Random background color</h2>
+                <p>Click the button below to randomly change the background color of whole website</p>
+                <button id="randomColorBtn" class="btn">Change background Color</button>
+                <button id="resetColorBtn" class="btn">Reset</button>
             </div>
-            <div class="mb-3">
-                <label for="sortOrder" class="form-label">Sort order:</label>
-                <select id="sortOrder" class="form-select">
-                    <option value="ascending">Ascending</option>
-                    <option value="descending">Descending</option>
-                </select>
-            </div>
-            <button type="button" id="sortButton" class="btn" style="width: 300px;">Sort Numbers</button>
-        </form>
-
-        <div class="mt-3">
-            <h4>Sorted Numbers:</h4>
-            <p id="sortedResult"></p>
-        </div>
-        <div id="error-message-container" class="error-message-container" style="display: none;">
-            <p id="error-message" style="color: white;"></p>
-            <div class="error-timer"></div>
         </div>
     </section>
 
     <section class="container mt-4">
-        <h1 class="text-center">Guess the Number!</h1>
-        <p class="text-center">Guess a number between 1 and 100.</p>
-        <div class="mb-3 col-6">
-        <form id="guess-form">
-                <label for="guessField" class="form-label display">Enter your guess:</label>
-                <input type="number" id="guessField" class="form-control larger-input" min="1" max="100" placeholder="Enter your guess">
-           <div class ="mb-3 col-6"><button type="button" id="submitguess" class="btn smaller-button">Submit Guess</button></div>
-        </form>
+        <div class="row justify-content-center">
+            <div class="col-6">
+                <h2>Number sorting</h2>
+                <p>Enter any numbers separated by comma (,), choose a sort order, and sort!</p>
+                <div class="mb-3">
+                    <form id="sorting-form">
+                        <div class="mb-3">
+                            <label for="numbersInput" class="form-label">Enter numbers:</label>
+                            <input type="text" id="numbersInput" class="form-control" placeholder="4, 3, 9, 1, 7">
+                        </div>
+                        <div class="mb-3">
+                            <label for="sortOrder" class="form-label">Sort order:</label>
+                            <select id="sortOrder" class="form-select">
+                                <option value="ascending">Ascending</option>
+                                <option value="descending">Descending</option>
+                            </select>
+                        </div>
+                        <button type="button" id="sortButton" class="btn" style="width: 300px;">Sort Numbers</button>
+                    </form>
+                </div>
+                <h4>Sorted numbers</h4>
+                <p id="sortedResult"></p>
+            </div>
+        </div>
+    </section>
+
+    <div id="error-message-container" class="error-message-container" style="display: none;">
+        <p id="error-message" style="color: white;"></p>
+        <div class="error-timer"></div>
     </div>
-        <div id="message" class="mt-3"></div>
+
+    <section class="container mt-4">
+        <div class="row justify-content-center">
+            <div class="col-6">
+                <h2>Guess the Number!</h2>
+                <p>Guess a number between 1 and 100.</p>
+                <div class="mb-3">
+                    <form id="guess-form">
+                        <label for="guessField" class="form-label display">Enter your guess:</label>
+                        <input type="number" id="guessField" class="form-control larger-input" min="1" max="100" placeholder="Enter your guess">
+                        <div class="mb-3">
+                            <button type="button" id="submitguess" class="btn smaller-button" style="width: 300px;">Submit Guess</button>
+                        </div>
+                    </form>
+                </div>
+                <div id="message" class="mt-3"></div>
+            </div>
+        </div>
     </section>
        
     <script src="js/changeColor.js"></script>
