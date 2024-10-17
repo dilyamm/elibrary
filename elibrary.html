@@ -13,49 +13,57 @@
     
     <header class="py-4">
         <div class="header-text">
-            <h1>Welcome to the E-Library</h1>
+            <h1 id="welcome-message">Welcome to the E-Library</h1>
         </div>
     </header>
+
     <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="elibrary.html">
-                    <img src="icons/pnghome.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
-      Home
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="Catalogue.html">
-                    <img src="icons/bookicon.png" alt="catalogue" width="30" height="24" class="d-inline-block align-text-top">
-                    Browse Catalogue
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="Catalogue.html#contact-us">
-                    <img src="icons/contact.png" alt="contact us" width="30" height="24" class="d-inline-block align-text-top">
-                    Contact us
-                </a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="Settings.html">
-                      <img src="icons/settings.png" alt="contact us" width="30" height="24" class="d-inline-block align-text-top"> Utilities
-                  </a>
-              </li>
-            </ul>
-            <form>
-                <input type="text" name="text" class="search" placeholder="Find book...">
-                <input type="submit" value="Search">
-            </form>
-          </div>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item" tabindex="0">
+                        <a href="elibrary.html" id="home-link" class="nav-link active" aria-current="page">
+                            <img src="icons/pnghome.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top"> Home
+                        </a>
+                    </li>
+                    <li class="nav-item" tabindex="0">
+                        <a href="Catalogue.html" id="catalogue-link" class="nav-link">
+                            <img src="icons/bookicon.png" alt="catalogue" width="30" height="24" class="d-inline-block align-text-top"> Browse Catalogue
+                        </a>
+                    </li>
+                    <li class="nav-item" tabindex="0">
+                        <a href="Catalogue.html#contact-us" id="contact-link" class="nav-link">
+                            <img src="icons/contact.png" alt="contact us" width="30" height="24" class="d-inline-block align-text-top"> Contact us
+                        </a>
+                    </li>
+                    <li class="nav-item" tabindex="0">
+                        <a href="Settings.html" id="utilities-link" class="nav-link">
+                            <img src="icons/settings.png" alt="settings" width="30" height="24" class="d-inline-block align-text-top"> Utilities
+                        </a>
+                    </li>
+                </ul>
+                <form class="d-flex align-items-center">
+                    <input type="text" name="text" class="search form-control me-2" placeholder="Find book...">
+                    <input type="submit" value="Search" class="btn btn-outline-secondary me-3">
+                    <div class="language-selector">
+                        <select id="language" class="form-select form-select-sm">
+                            <option value="en">English</option>
+                            <option value="ru">Русский</option>
+                            <option value="kk">Қазақша</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
         </div>
-      </nav>
+    </nav>    
+        
 
     <div class="date-time-container">
-        <p id="date-time"></p>
+        <button id="show-time-btn" class="btn">Show Current Time</button>
+        <p id="current-time-display"></p>
         <script src="js/datetime.js"></script>
     </div>
+
     
       <div id="carouselExampleCaptions" class="carousel slide">
         <div class="carousel-indicators">
@@ -69,11 +77,11 @@
                 
     <section class="intro-section">
         <div class="intro-text">
-            <h2>Your gateway to unlimited knowledge</h2>
+            <h2 id="greeting">Your gateway to unlimited knowledge</h2>
             <br>
-            <p>Welcome to our online library! Here you can find a wide variety of books, audiobooks, and educational materials available at your fingertips, anytime and anywhere. Explore thousands of titles in various genres and discover your next favorite book.</p>
+            <p id="description">Welcome to our online library! Here you can find a wide variety of books, audiobooks, and educational materials available at your fingertips, anytime and anywhere. Explore thousands of titles in various genres and discover your next favorite book.</p>
             <br>
-            <p>Browse our extensive catalogue today and discover new worlds, ideas, and stories. Whether you're looking for the latest bestsellers or classic literature, we've got something for everyone!</p>
+            <p id="catalogue-description">Browse our extensive catalogue today and discover new worlds, ideas, and stories. Whether you're looking for the latest bestsellers or classic literature, we've got something for everyone!</p>
             <br>
             <a href="catalogue.html" class="cta-button">Browse Catalogue</a>
         </div>
@@ -217,6 +225,7 @@
     </footer>
 
     <script src="js/changeColor.js"></script>
-
+    <script src="js/navigation.js"></script>
+    <script src="js/language.js"></script>
 </body>
 </html>
