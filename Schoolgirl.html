@@ -52,8 +52,9 @@
         </div>
       </nav>
 
-    <div class="date-time-container">
-        <p id="date-time"></p>
+      <div class="date-time-container">
+        <button id="show-time-btn" class="btn">Show Current Time</button>
+        <p id="current-time-display"></p>
         <script src="js/datetime.js"></script>
     </div>
     
@@ -95,7 +96,9 @@
                     <div class="action-buttons">
                         <a href="online books/schoolgirlbook.pdf" class="btn btn-lg">Download</a>
                         <a href="https://www.youtube.com/watch?v=ak1ziTELCs4" class="btn btn-lg">Listen online</a>
+                        <button id="play-audio-btn" class="btn btn-lg">Play Audiobook</button>
                     </div>
+                    <audio id="audiobook" src="sounds/schoolgirl by osamu dazai.mp3" hidden></audio>
                 </div>
 
                 <div class="book-cover">
@@ -110,5 +113,7 @@
     </footer>
 
     <script src="js/changeColor.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/sound.js"></script>
 </body>
 </html>
