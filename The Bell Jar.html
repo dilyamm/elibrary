@@ -52,8 +52,9 @@
         </div>
       </nav>
     
-    <div class="date-time-container">
-        <p id="date-time"></p>
+      <div class="date-time-container">
+        <button id="show-time-btn" class="btn">Show Current Time</button>
+        <p id="current-time-display"></p>
         <script src="js/datetime.js"></script>
     </div>
     
@@ -94,7 +95,9 @@
                     <div class="action-buttons">
                         <a class="btn btn-lg" href="online books/thebelljarbook.pdf">Download</a>
                         <a class="btn btn-lg" href="https://www.youtube.com/watch?v=-R402s-05U4">Listen online</a>
+                        <button id="play-audio-btn" class="btn btn-lg">Play Audiobook</button>
                     </div>
+                    <audio id="audiobook" src="sounds/the bell jar.mp3" hidden></audio>
                 </div>
 
                 <div class="book-cover">
@@ -109,5 +112,7 @@
     </footer>
 
     <script src="js/changeColor.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/sound.js"></script>
 </body>
 </html>
