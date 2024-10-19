@@ -14,5 +14,17 @@ function updateDateTime() {
     document.getElementById('date-time').textContent = formattedDateTime;
 }
 
+document.getElementById('show-time-btn').addEventListener('click', function() {
+    const currentTimeDisplay = document.getElementById('current-time-display');
+    
+    function updateCurrentTime() {
+        const currentTime = new Date().toLocaleTimeString();
+        currentTimeDisplay.textContent = `Current Time: ${currentTime}`;
+    }
+    
+    updateCurrentTime();
+    setInterval(updateCurrentTime, 1000);
+});
+
 updateDateTime();
 setInterval(updateDateTime, 1000);

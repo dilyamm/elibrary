@@ -609,3 +609,42 @@ footer p {
     background-color: #7b6b5a;
     transform: scale(1.03);
 }
+
+.nav-item:focus {
+    outline: none; 
+}
+
+.nav-link {
+    padding: 10px 15px; 
+    color: #5a3a22; 
+}
+
+.nav-item:focus .nav-link {
+    background-color: #7b6b5a; 
+    color: #fff; 
+    border-radius: 5px; 
+}
+
+.btn {
+    background-color: #7b6b5a; 
+    color: #fff; 
+    border: none; 
+}
+
+.btn:hover {
+    background-color: #7b6b5a; 
+    color: #fff; 
+}
+
+.language-selector {
+    margin-left: 15px; 
+    min-width: 120px; 
+}
+
+.language-selector select {
+    padding: 5px 10px; 
+    border-radius: 5px; 
+    border: 1px solid #dcd3c0; 
+    background-color: #f5f0e1; 
+    color: #3e3c38;
+}
