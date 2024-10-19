@@ -1,5 +1,5 @@
-document.getElementById("sortButton").addEventListener("click", function() { //устанавливаем событие, которое срабатывает, когда пользователь нажимает кнопку сортировки
-    const numbersInput = document.getElementById("numbersInput").value; //считывает введенные числа
+document.getElementById("sortButton").addEventListener("click", function() {
+    const numbersInput = document.getElementById("numbersInput").value;
     const sortOrder = document.getElementById("sortOrder").value;
     const resultDisplay = document.getElementById("sortedResult");
 
@@ -8,7 +8,7 @@ document.getElementById("sortButton").addEventListener("click", function() { //�
         return;
     }
 
-    const numbersArray = numbersInput.split(',').map(num => num.trim()); //введенные числа разбиваются на массив
+    const numbersArray = numbersInput.split(',').map(num => num.trim());
     
     if (numbersArray.some(isNaN)) {
         showError("Please enter valid numbers only!");

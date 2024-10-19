@@ -2,14 +2,14 @@ const colors = ["bg-color-1", "bg-color-2", "bg-color-3", "bg-color-4", "bg-colo
 const btn = document.getElementById("randomColorBtn");
 const resetBtn = document.getElementById("resetColorBtn");
 
-document.addEventListener("DOMContentLoaded", function() { //эту функцию используем, чтобы код подождал загрузки и поменял цвет
-    const savedColor = localStorage.getItem("backgroundColor"); //сохраняет цвет в памяти браузера
+document.addEventListener("DOMContentLoaded", function() {
+    const savedColor = localStorage.getItem("backgroundColor");
     if (savedColor) {
-        document.body.className = savedColor; // возвращает нам цвет фона
+        document.body.className = savedColor;
     }
 });
 
-btn.addEventListener(function() { //функция меняет цвет страницы рандомно
+btn.addEventListener(function() {
     const randomColor = colors[Math.floor(Math.random() * colors.length)];
     document.body.className = randomColor;
     localStorage.setItem("backgroundColor", randomColor);
