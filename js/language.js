@@ -1,3 +1,11 @@
+document.addEventListener('DOMContentLoaded', function() {
+    const savedLanguage = localStorage.getItem('selectedLanguage');
+    if (savedLanguage) {
+        changeLanguage(savedLanguage);
+        document.getElementById('language').value = savedLanguage;
+    }
+});
+
 document.getElementById('language').addEventListener('change', function() {
     const selectedLanguage = this.value;
     changeLanguage(selectedLanguage);
