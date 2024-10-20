@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     const readMoreButtons = document.querySelectorAll('.read-more-btn');
-
+    
     readMoreButtons.forEach(function(button) {
         button.addEventListener('click', function() {
             const bookDetails = this.nextElementSibling;
