@@ -1,13 +1,18 @@
 document.addEventListener('DOMContentLoaded', function() {
     const savedLanguage = localStorage.getItem('selectedLanguage');
+    console.log('Загруженный язык:', savedLanguage); 
+
     if (savedLanguage) {
-        changeLanguage(savedLanguage);
-        document.getElementById('language').value = savedLanguage;
+        changeLanguage(savedLanguage); 
+        document.getElementById('language').value = savedLanguage; 
     }
 });
 
 document.getElementById('language').addEventListener('change', function() {
     const selectedLanguage = this.value;
+    console.log('Выбранный язык:', selectedLanguage); 
+
+    localStorage.setItem('selectedLanguage', selectedLanguage);
     changeLanguage(selectedLanguage);
 });
 
