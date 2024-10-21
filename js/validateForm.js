@@ -39,32 +39,3 @@ function clearForm() {
     document.getElementById('email').value = '';
     document.getElementById('message').value = '';
 }
-
-document.getElementById('contact-form').addEventListener('submit', function(event) {
-    event.preventDefault();
-    
-    const name = document.getElementById('name').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const message = document.getElementById('message').value.trim();
-
-    var nameParts = name.split(" ");
-    if (nameParts.length < 2 || nameParts.some(part => part === "")) {
-        showError("Please enter your full name (First and Last Name)!");
-        return false;
-    }
-
-    var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    if (!emailPattern.test(email)) {
-        showError("The email you entered is not valid!");
-        return false;
-    }
-
-    if (message.length === 0) {
-        showError("Please write a message!");
-        return false;
-    }
-
-    showSuccess("Your message has been sent successfully!");
-
-    clearForm();
-});

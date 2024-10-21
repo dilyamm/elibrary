@@ -2,6 +2,11 @@ document.addEventListener('DOMContentLoaded', function () {
     const steps = Array.from(document.getElementsByClassName('form-step'));
     const progressSteps = Array.from(document.getElementsByClassName('progress-step'));
     let currentStep = 0;
+    const formData = {
+      name: '',
+      email: '',
+      message: ''
+    };
 
     function updateProgressBar(stepIndex) {
         progressSteps.forEach((step, index) => {
@@ -59,36 +64,50 @@ document.addEventListener('DOMContentLoaded', function () {
         return true;
     }
 
+    function saveData() {
+        formData.name = document.getElementById('name').value;
+        formData.email = document.getElementById('email').value;
+        formData.message = document.getElementById('message').value;
+      }
+
     document.getElementById('next-1').addEventListener('click', (event) => {
         event.preventDefault();
-        if (validateStep(0)) {
-            showStep(1);
-        }
-    });
-
-    document.getElementById('next-2').addEventListener('click', (event) => {
-        event.preventDefault();
-        if (validateStep(1)) {
-            showStep(2);
+        if (validateStep(currentStep)) {
+            currentStep++;
+            showStep(currentStep);
         }
     });
 
     document.getElementById('back-1').addEventListener('click', (event) => {
         event.preventDefault();
-        showStep(0);
+        currentStep--;
+        showStep(currentStep);
+    });
+
+    document.getElementById('next-2').addEventListener('click', (event) => {
+        event.preventDefault();
+        if (validateStep(currentStep)) {
+            currentStep++;
+            showStep(currentStep);
+        }
     });
 
     document.getElementById('back-2').addEventListener('click', (event) => {
         event.preventDefault();
-        showStep(1);
+        currentStep--;
+        showStep(currentStep);
     });
 
     document.getElementById('contact-form').addEventListener('submit', function (event) {
         event.preventDefault();
         if (validateStep(2)) {
-            showSuccess("Your message has been sent successfully!");
+            saveData();
+            showSuccess(`${formData.name}, your message has been sent successfully!`);
             clearForm();
             showStep(0);
         }
     });
+
+    
+    showStep(currentStep); 
 });
