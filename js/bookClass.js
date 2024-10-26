@@ -16,17 +16,23 @@ const books = [
     new Book("Schoolgirl", "Osamu Dazai", "Osamu Dazai's novella explores a day in the life of a Tokyo schoolgirl, renowned for its ironic language and its depiction of an individual's struggle against societal norms.", 1939, "Fiction, Classics, Novella", 103, "images/schoolgirl.jpg")
 ];
 
+let allBooks = [...books];
+
 function displayBooks(filteredBooks) {
     const bookContainer = document.getElementsByClassName('book-container')[0];
     bookContainer.innerHTML = '';
     filteredBooks.forEach(book => {
+        const shortDescription = book.description.length > 100 
+            ? book.description.substring(0, 100) + '...' 
+            : book.description;
+        
         const bookCard = `
             <div class="book-section card">
                 <img src="${book.image}" class="card-img-top" alt="${book.title}">
                 <div class="card-body">
                     <h4 class="card-title">${book.title}</h4>
                     <p class="card-title">${book.author}</p>
-                    <p class="card-text">${book.description}</p>
+                    <p class="card-text">${shortDescription}</p>
                     <a href="${book.title}.html" class="btn">Open book page</a>
                     <button class="btn read-more-btn">Read More</button>
 
@@ -39,7 +45,51 @@ function displayBooks(filteredBooks) {
             </div>
         `;
         bookContainer.innerHTML += bookCard;
+
+        readMoreButtons();
     });
+}
+
+function readMoreButtons() {
+    const readMoreButtons = document.querySelectorAll('.read-more-btn');
+    
+    readMoreButtons.forEach(function(button) {
+        button.addEventListener('click', function() {
+            const bookDetails = this.nextElementSibling;
+            
+            if (bookDetails.style.display === "none") {
+                bookDetails.style.display = "block";
+                this.textContent = "Read Less";
+            } else {
+                bookDetails.style.display = "none";
+                this.textContent = "Read More";
+            }
+        });
+    });
+}
+
+async function loadAPIBooks() {
+    try {
+        const response = await fetch(`https://openlibrary.org/search.json?q=fiction`);
+        const data = await response.json();
+
+        const apiBooks = data.docs.slice(0, 10).map(doc => {
+            return new Book(
+                doc.title || 'Unknown Title',
+                doc.author_name ? doc.author_name.join(', ') : 'Unknown Author',
+                doc.first_sentence ? doc.first_sentence.join(' ') : 'No description available.',
+                doc.first_publish_year || 'Unknown Year',
+                doc.subject && Array.isArray(doc.subject) ? doc.subject.slice(0, 5).join(', ') : '',
+                doc.number_of_pages_median || 'Unknown Pages',
+                doc.cover_i ? `https://covers.openlibrary.org/b/id/${doc.cover_i}-M.jpg` : 'images/default-cover.jpg'
+            );
+        });
+
+        allBooks = allBooks.concat(apiBooks);
+        displayBooks(allBooks);
+    } catch (error) {
+        console.error("Error loading API books: ", error);
+    }
 }
 
 function filterBooks() {
@@ -47,7 +97,7 @@ function filterBooks() {
     const authorInput = document.getElementById('search-author').value.toLowerCase();
     const titleInput = document.getElementById('search-title').value.toLowerCase();
 
-    const filteredBooks = books.filter(book => {
+    const filteredBooks = allBooks.filter(book => {
         const matchesGenre = genreSelect === 'all' || book.genre.toLowerCase().includes(genreSelect);
         const matchesAuthor = book.author.toLowerCase().includes(authorInput);
         const matchesTitle = book.title.toLowerCase().includes(titleInput);
@@ -59,17 +109,12 @@ function filterBooks() {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-    displayBooks(books);
+    loadAPIBooks();
 
     document.querySelectorAll('.genre-select').forEach(form => {
         form.addEventListener('submit', function(event) {
             event.preventDefault();
             filterBooks();
-            console.log(1);
         });
     });
-
-    document.getElementById('genres').addEventListener('change', filterBooks);
-    document.querySelector('.search-author').addEventListener('input', filterBooks);
-    document.querySelector('.search-title').addEventListener('input', filterBooks);
 });
