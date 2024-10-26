@@ -235,6 +235,7 @@ h1 {
     background-color: #ece6d9;
     border-radius: 8px;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     gap: 15px;
 }
@@ -615,7 +616,6 @@ footer p {
 }
 
 .nav-link {
-    padding: 10px 15px; 
     color: #5a3a22; 
 }
 
@@ -747,4 +747,17 @@ footer p {
 .drop-zone.active {
     background-color: #d4edda;
     border-color: #28a745;
+}
+
+nav {
+    z-index: 1000;
+}
+
+@media (max-width: 767px) {
+    .collapse {
+        background-color: #dcd3c0;
+    }
+    .nav-link {
+        margin: 5px !important;
+    }
 }

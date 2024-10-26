@@ -16,10 +16,10 @@ const books = [
     new Book("Schoolgirl", "Osamu Dazai", "Osamu Dazai's novella explores a day in the life of a Tokyo schoolgirl, renowned for its ironic language and its depiction of an individual's struggle against societal norms.", 1939, "Fiction, Classics, Novella", 103, "images/schoolgirl.jpg")
 ];
 
-function displayBooks() {
+function displayBooks(filteredBooks) {
     const bookContainer = document.getElementsByClassName('book-container')[0];
     bookContainer.innerHTML = '';
-    books.forEach(book => {
+    filteredBooks.forEach(book => {
         const bookCard = `
             <div class="book-section card">
                 <img src="${book.image}" class="card-img-top" alt="${book.title}">
@@ -42,6 +42,34 @@ function displayBooks() {
     });
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-    displayBooks();
+function filterBooks() {
+    const genreSelect = document.getElementById('genres').value.toLowerCase();
+    const authorInput = document.getElementById('search-author').value.toLowerCase();
+    const titleInput = document.getElementById('search-title').value.toLowerCase();
+
+    const filteredBooks = books.filter(book => {
+        const matchesGenre = genreSelect === 'all' || book.genre.toLowerCase().includes(genreSelect);
+        const matchesAuthor = book.author.toLowerCase().includes(authorInput);
+        const matchesTitle = book.title.toLowerCase().includes(titleInput);
+
+        return matchesGenre && matchesAuthor && matchesTitle;
+    });
+
+    displayBooks(filteredBooks);
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    displayBooks(books);
+
+    document.querySelectorAll('.genre-select').forEach(form => {
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+            filterBooks();
+            console.log(1);
+        });
+    });
+
+    document.getElementById('genres').addEventListener('change', filterBooks);
+    document.querySelector('.search-author').addEventListener('input', filterBooks);
+    document.querySelector('.search-title').addEventListener('input', filterBooks);
 });

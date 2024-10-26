@@ -18,6 +18,9 @@
     </header>
     <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
@@ -41,8 +44,8 @@
                         </a>
                     </li>
                 </ul>
-                <form>
-                    <input type="text" name="text" class="search" placeholder="Find book...">
+                <form class="d-flex">
+                    <input type="text" name="text" class="form-control me-2" placeholder="Find book...">
                     <input type="submit" value="Search">
                 </form>
             </div>
@@ -108,7 +111,7 @@
                         <label for="guessField" class="form-label display">Enter your guess:</label>
                         <input type="number" id="guessField" class="form-control larger-input" min="1" max="100" placeholder="Enter your guess">
                         <div class="mb-3">
-                            <button type="button" id="submitguess" class="btn smaller-button" style="width: 300px;">Submit Guess</button>
+                            <button type="button" id="submitguess" class="btn" style="width: 300px;">Submit Guess</button>
                         </div>
                     </form>
                 </div>

@@ -18,6 +18,9 @@
     </header>
     <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
@@ -41,8 +44,8 @@
                         </a>
                     </li>
                 </ul>
-                <form>
-                    <input type="text" name="text" class="search" placeholder="Find book...">
+                <form class="d-flex">
+                    <input type="text" name="text" class="form-control me-2" placeholder="Find book...">
                     <input type="submit" value="Search">
                 </form>
             </div>
@@ -56,27 +59,29 @@
     </div>
 
     <div class="genre-select">
-        <form>
+        <form class="search-form">
             <label for="genres">Select a genre:</label>
             <select id="genres" name="genres">
-                <option value="recommendations">Recommendations</option>
-                <option value="romance">Romance</option>
-                <option value="adventure">Adventure</option>
-                <option value="other">Other</option>
+                <option value="all">All</option>
+                <option value="Fiction">Fiction</option>
+                <option value="Contemporary">Contemporary</option>
+                <option value="Mental Health">Mental Health</option>
+                <option value="Classics">Classics</option>
+                <option value="Novella">Novella</option>
             </select>
             <input type="submit" value="Search">
         </form>
         
-        <form>
-            <input type="text" name="text" class="search" placeholder="Search by author">
+        <form class="search-form">
+            <input type="text" name="text" class="search" id="search-author" placeholder="Search by author">
             <input type="submit" value="Search">
         </form>
         
-        <form>
-            <input type="text" name="text" class="search" placeholder="Search by name">
+        <form class="search-form">
+            <input type="text" name="text" class="search" id="search-title" placeholder="Search by name">
             <input type="submit" value="Search">
         </form>
-    </div>
+    </div>    
 
     <div class="book-container"></div>
 
