@@ -111,7 +111,7 @@ function filterBooks() {
 document.addEventListener('DOMContentLoaded', function() {
     loadAPIBooks();
 
-    document.querySelectorAll('.genre-select').forEach(form => {
+    document.querySelectorAll('.search-form').forEach(form => {
         form.addEventListener('submit', function(event) {
             event.preventDefault();
             filterBooks();
