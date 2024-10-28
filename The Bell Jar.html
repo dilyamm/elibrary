@@ -103,6 +103,17 @@
                 <div class="book-cover">
                     <img src="images/thebelljar.jpg" alt="The Bell Jar">
                 </div>
+
+                <div id="new-reviews"></div>
+        </div>
+
+        <div class="add-review">
+            <h2>Add Your Review</h2>
+            <form id="review-form" class="d-flex flex-column align-items-start gap-2">
+                <input type="text" class="form-control w-100" id="name" placeholder="Your Name" required>
+                <textarea class="form-control w-100" id="review" rows="3" placeholder="Your Review" required></textarea>
+                <button type="submit" class="btn btn-primary w-100">Submit Review</button>
+            </form>
             </div>
         </section>
     </main>
@@ -114,5 +125,6 @@
     <script src="js/changeColor.js"></script>
     <script src="js/navigation.js"></script>
     <script src="js/sound.js"></script>
+    <script src="js/review.js"></script>
 </body>
 </html>
