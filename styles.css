@@ -761,3 +761,61 @@ nav {
         margin: 5px !important;
     }
 }
+.speed-control-container {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    background-color: #ece6d9;
+    height: 80px;
+}
+
+.speed-label, .speed-value {
+    font-size: 18px;
+    color: #3e3c38;
+    margin-right: 10px;
+}
+
+.speed-slider {
+    width: 300px;
+    -webkit-appearance: none;
+    height: 8px;
+    background: #ffffff;
+    border-radius: 5px;
+    outline: none;
+    position: relative;
+    margin: 0 10px;
+}
+
+.speed-slider::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 8px;
+    background: #ffffff;
+    border-radius: 5px;
+}
+
+.speed-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #9a8c78;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-top: -6px;
+}
+
+.speed-labels {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    bottom: 10px;
+    width: 300px;
+    font-size: 12px;
+    color: #3e3c38;
+    margin-left: 12px;
+}
+
+.speed-labels span {
+    position: relative;
+}
