@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
-btn.addEventListener(function() {
+btn.addEventListener("click", function() {
     const randomColor = colors[Math.floor(Math.random() * colors.length)];
     document.body.className = randomColor;
     localStorage.setItem("backgroundColor", randomColor);

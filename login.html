@@ -3,17 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Bell Jar - Sylvia Plath</title>
+    <title>Login</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="icons/bookicon.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </head>
 <body class="m-0 p-0">
-    
     <header class="py-4">
         <div class="header-text">
-            <h1>Welcome to the E-Library</h1>
+            <h1>Register to E-Library</h1>
         </div>
     </header>
     <nav class="navbar navbar-expand-lg">
@@ -64,80 +63,37 @@
         </div>
     </nav>
     
-      <div class="date-time-container">
-        <button id="show-time-btn" class="btn">Show Current Time</button>
-        <p id="current-time-display"></p>
-        <script src="js/datetime.js"></script>
-    </div>
+    <section id="auth-section" class="contact-section">
+        <div id="forms-container">
+            <form id="login-form" class="auth-form" novalidate>
+                <h2>Login</h2>
+                <label for="login-username">Username:</label>
+                <input type="text" id="login-username" placeholder="Username">
     
-    <main>
-        <section class="book-details">
-            <div class="content-wrapper">
-                
-                <div class="book-info">
-                    <h1>The Bell Jar</h1>
-                    <p><strong>Author:</strong> Sylvia Plath</p>
-
-                    <div class="book-description">
-                        <h2>About the Book</h2>
-                        <p>
-                            <em>The Bell Jar</em> chronicles the crack-up of Esther Greenwood: brilliant, beautiful, enormously talented, and successful, 
-                but slowly going under—maybe for the last time. Sylvia Plath masterfully draws the reader into Esther's breakdown with such intensity that Esther's 
-                insanity becomes completely real and even rational, as probable and accessible an experience as going to the movies. Such deep penetration into the 
-                dark and harrowing corners of the psyche is an extraordinary accomplishment and has made The Bell Jar a haunting American classic.
-                    </div>
-
-                    <h2>Book Details</h2>
-                    <ul>
-                        <li><strong>Publication Year:</strong> 1963</li>
-                        <li><strong>Genre:</strong> Fiction, Semi-Autobiographical</li>
-                        <li><strong>Pages:</strong> 294</li>
-                    </ul>
-
-                    <div class="reviews">
-                        <h2>Reviews</h2>
-                        <div class="review">
-                            <p><strong>Dilya:</strong> "The main character is so me"</p>
-                        </div>
-                        <div class="review">
-                            <p><strong>Rory:</strong> "Sylvia Plath's prose is haunting, and her depiction of mental illness is profound."</p>
-                        </div>
-                    </div>
-
-                    <div class="action-buttons">
-                        <a class="btn btn-lg" href="online books/thebelljarbook.pdf">Download</a>
-                        <a class="btn btn-lg" href="https://www.youtube.com/watch?v=-R402s-05U4">Listen online</a>
-                        <button id="play-audio-btn" class="btn btn-lg">Play Audiobook</button>
-                    </div>
-                    <audio id="audiobook" src="sounds/the bell jar.mp3" hidden></audio>
-                </div>
-
-                <div class="book-cover">
-                    <img src="images/thebelljar.jpg" alt="The Bell Jar">
-                </div>
-
-                <div id="new-reviews"></div>
-        </div>
-
-        <div class="add-review">
-            <h2>Add Your Review</h2>
-            <form id="review-form" class="d-flex flex-column align-items-start gap-2">
-                <input type="text" class="form-control w-100" id="name" placeholder="Your Name" required>
-                <textarea class="form-control w-100" id="review" rows="3" placeholder="Your Review" required></textarea>
-                <button type="submit" class="btn btn-primary w-100">Submit Review</button>
+                <label for="login-password">Password:</label>
+                <input type="password" id="login-password" placeholder="Password">
+    
+                <input type="submit" value="Login">
+                <p>Don't have an account? <span id="to-register" class="highlight-link">Register</span></p>
             </form>
-            </div>
-        </section>
-    </main>
+        </div>
+    
+        <div id="error-message-container" class="error-message-container" style="display: none;">
+            <p id="error-message" style="color: white;"></p>
+            <div class="error-timer"></div>
+        </div>
+        <div id="success-message-container" class="success-message-container" style="display: none;">
+            <p id="success-message" style="color: white;"></p>
+            <div class="success-timer"></div>
+        </div>
+    </section>
+    <script src="js/register.js"></script>
+    <script src="js/validateForm.js"></script>
+    <script src="js/navbar.js"></script>
+
 
     <footer>
         <p>Made by: Muratova Dilnaz, Berentayeva Darina</p>
     </footer>
-
-    <script src="js/changeColor.js"></script>
-    <script src="js/navigation.js"></script>
-    <script src="js/sound.js"></script>
-    <script src="js/review.js"></script>
-    <script src="js/navbar.js"></script>
 </body>
 </html>
