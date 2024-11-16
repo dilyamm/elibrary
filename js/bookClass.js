@@ -34,6 +34,8 @@ function displayBooks(filteredBooks) {
                     <p class="card-title">${book.author}</p>
                     <p class="card-text">${shortDescription}</p>
                     <a href="${book.title}.html" class="btn">Open book page</a>
+                    <button class="btn add-to-reading">Add to Reading list</button>
+                    <button class="btn add-to-finished">Mark as readed</button>
                     <button class="btn read-more-btn">Read More</button>
 
                     <div class="book-details" style="display: none;">
@@ -47,6 +49,7 @@ function displayBooks(filteredBooks) {
         bookContainer.innerHTML += bookCard;
 
         readMoreButtons();
+        setupAddToLists();
     });
 }
 
@@ -68,9 +71,51 @@ function readMoreButtons() {
     });
 }
 
+function setupAddToLists() {
+    const users = JSON.parse(localStorage.getItem('users')) || [];
+    const currentUser = users.find(user => user.isLoggedIn === true);
+    document.querySelectorAll('.add-to-reading').forEach(button => {
+        button.addEventListener('click', function () {
+            const bookTitle = this.parentElement.querySelector('.card-title').textContent;
+
+            const finishedIndex = currentUser.finishedBooks.indexOf(bookTitle);
+            if (finishedIndex !== -1) {
+                currentUser.finishedBooks.splice(finishedIndex, 1);
+            }
+
+            if (!currentUser.currentlyReading.includes(bookTitle)) {
+                currentUser.currentlyReading.push(bookTitle);
+                localStorage.setItem('users', JSON.stringify(users));
+                showSuccess(`${bookTitle} added to your Reading list!`);
+            } else {
+                showError(`${bookTitle} is already in your Reading list!`);
+            }
+        });
+    });
+
+    document.querySelectorAll('.add-to-finished').forEach(button => {
+        button.addEventListener('click', function () {
+            const bookTitle = this.parentElement.querySelector('.card-title').textContent;
+
+            const readingIndex = currentUser.currentlyReading.indexOf(bookTitle);
+            if (readingIndex !== -1) {
+                currentUser.currentlyReading.splice(readingIndex, 1);
+            }
+
+            if (!currentUser.finishedBooks.includes(bookTitle)) {
+                currentUser.finishedBooks.push(bookTitle);
+                localStorage.setItem('users', JSON.stringify(users));
+                showSuccess(`${bookTitle} marked as readed!`);
+            } else {
+                showError(`${bookTitle} is already marked as readed!`);
+            }
+        });
+    });
+}
+
 async function loadAPIBooks() {
     try {
-        const response = await fetch(`https://openlibrary.org/search.json?q=fiction`);
+        const response = await fetch(`https://openlibrary.org/search.json?q=fiction&fields=title,author_name,first_sentence,first_publish_year,subject,number_of_pages_median,cover_i`);
         const data = await response.json();
 
         const apiBooks = data.docs.slice(0, 10).map(doc => {

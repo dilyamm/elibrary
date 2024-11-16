@@ -14,11 +14,9 @@ document.addEventListener('DOMContentLoaded', function () {
         const readingContainer = document.getElementById('currently-reading');
         const finishedContainer = document.getElementById('finished-books');
 
-        // Очистка контейнеров
         readingContainer.innerHTML = '<h3>Currently Reading</h3>';
         finishedContainer.innerHTML = '<h3>Finished Books</h3>';
 
-        // Отображение книг или текста "Пока пусто"
         if (currentUser.currentlyReading.length == 0) {
             readingContainer.innerHTML += '<p id="reading-empty">No books yet!</p>';
         } else {
@@ -81,6 +79,35 @@ document.addEventListener('DOMContentLoaded', function () {
     function handleDragOver(event) {
         event.preventDefault();
     }
+
+    const deleteArea = document.getElementById('delete-area');
+
+deleteArea.addEventListener('dragover', function (event) {
+    event.preventDefault();
+    deleteArea.classList.add('drag-over');
+});
+
+deleteArea.addEventListener('dragleave', function () {
+    deleteArea.classList.remove('drag-over');
+});
+
+deleteArea.addEventListener('drop', function (event) {
+    event.preventDefault();
+    deleteArea.classList.remove('drag-over');
+
+    if (!draggedBook) return;
+
+    const sourceType = draggedBook.dataset.type;
+    const sourceArray = currentUser[sourceType];
+    const bookIndex = draggedBook.dataset.index;
+
+    sourceArray.splice(bookIndex, 1);
+
+    localStorage.setItem('users', JSON.stringify(users));
+
+    renderBooks();
+    showSuccess("Book removed successfully!");
+});
 
     document.getElementById('currently-reading').addEventListener('dragover', handleDragOver);
     document.getElementById('currently-reading').addEventListener('drop', handleDrop);
