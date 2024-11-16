@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="icons/bookicon.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</head>
+<body class="m-0 p-0">
+
+    <header class="py-4">
+        <div class="header-text">
+            <h1>Welcome to the E-Library</h1>
+        </div>
+    </header>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="elibrary.html">
+                            <img src="icons/pnghome.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top"> Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="Catalogue.html">
+                            <img src="icons/bookicon.png" alt=" Browse Catalogue" width="30" height="24" class="d-inline-block align-text-top"> Start Quiz
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Catalogue.html#contact-us">
+                            <img src="icons/contact.png" alt="contact us" width="30" height="24" class="d-inline-block align-text-top"> Contact us
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Settings.html">
+                            <img src="icons/settings.png" alt="Settings" width="30" height="24" class="d-inline-block align-text-top"> Utilities
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="register.html" id="register-link">Register</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html" id="login-link">Login</a>
+                    </li>
+                    <li class="nav-item" style="display: none;" id="profile-item">
+                        <a class="nav-link" href="profile.html" id="profile-link">Profile</a>
+                    </li>
+                    <li class="nav-item" style="display: none;" id="logout-item">
+                        <a class="nav-link" href="#" id="logout-link" onclick="logout()">Logout</a>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <input type="text" name="text" class="form-control me-2" placeholder="Search quiz...">
+                    <input type="submit" value="Search">
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container py-5">
+        <h2>Quiz: Test Your Knowledge!</h2>
+        <p>Answer the questions below and see how well you know the subject!</p>
+ 
+        <p id="feedback"></p>
+
+    <form id="quiz-form">
+            <!-- Questions -->
+            <div class="row gy-4">
+                <!-- Question 1 -->
+                <div class="col-12">
+                    <h5>1. In what year was "Schoolgirl" first published?</h5>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q1" id="q1a" value="1939" required>
+                        <label class="form-check-label" for="q1a">1939</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q1" id="q1b" value="1945">
+                        <label class="form-check-label" for="q1b">1945</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q1" id="q1c" value="1950">
+                        <label class="form-check-label" for="q1c">1950</label>
+                    </div>
+                </div>
+
+                <!-- Question 2 -->
+                <div class="col-12">
+                    <h5>2. What is the main theme of the book?</h5>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q2" id="q2a" value="Struggle against societal norms" required>
+                        <label class="form-check-label" for="q2a">Struggle against societal norms</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q2" id="q2b" value="Romance">
+                        <label class="form-check-label" for="q2b">Romance</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q2" id="q2c" value="War">
+                        <label class="form-check-label" for="q2c">War</label>
+                    </div>
+                </div>
+
+                <!-- Question 3 -->
+                <div class="col-12">
+                    <h5>3. How does the book depict the protagonist's daily life?</h5>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q3" id="q3a" value="Ironically and inventively" required>
+                        <label class="form-check-label" for="q3a">Ironically and inventively</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q3" id="q3b" value="With a focus on romance">
+                        <label class="form-check-label" for="q3b">With a focus on romance</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q3" id="q3c" value="Through historical context">
+                        <label class="form-check-label" for="q3c">Through historical context</label>
+                    </div>
+                </div>
+
+                <!-- Question 4 -->
+                <div class="col-12">
+                    <h5>4. What is the genre of "Schoolgirl"?</h5>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q4" id="q4a" value="Fiction" required>
+                        <label class="form-check-label" for="q4a">Fiction</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q4" id="q4b" value="Non-fiction">
+                        <label class="form-check-label" for="q4b">Non-fiction</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q4" id="q4c" value="Science Fiction">
+                        <label class="form-check-label" for="q4c">Science Fiction</label>
+                    </div>
+                </div>
+
+                <!-- Question 5 -->
+                <div class="col-12">
+                    <h5>5. Which literary style is used prominently in the book?</h5>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q5" id="q5a" value="Playful language" required>
+                        <label class="form-check-label" for="q5a">Playful language</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q5" id="q5b" value="Formal narrative">
+                        <label class="form-check-label" for="q5b">Formal narrative</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q5" id="q5c" value="Free verse">
+                        <label class="form-check-label" for="q5c">Free verse</label>
+                    </div>
+                </div>
+
+                <!-- Question 6 -->
+                <div class="col-12">
+                    <h5>6. Who is the main target of the protagonist’s struggles in "Schoolgirl"?</h5>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q6" id="q6a" value="Society ('them')" required>
+                        <label class="form-check-label" for="q6a">Society ('them')</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q6" id="q6b" value="Her family">
+                        <label class="form-check-label" for="q6b">Her family</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q6" id="q6c" value="Her classmates">
+                        <label class="form-check-label" for="q6c">Her classmates</label>
+                    </div>
+                </div>
+
+                <!-- Question 7 -->
+                <div class="col-12">
+                    <h5>7. What was the impact of the book on Dazai's career?</h5>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q7" id="q7a" value="It propelled him into the literary elite" required>
+                        <label class="form-check-label" for="q7a">It propelled him into the literary elite</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q7" id="q7b" value="It was his debut work">
+                        <label class="form-check-label" for="q7b">It was his debut work</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="q7" id="q7c" value="It led to controversy">
+                        <label class="form-check-label" for="q7c">It led to controversy</label>
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="col-12">
+                    <button type="submit" class="btn btn-primary w-100">Submit Quiz</button>
+                </div>
+            </div>
+        </form>
+
+        <!-- Result Section -->
+        <div id="result" class="mt-5 text-center" style="display:none;">
+            <h3>Thank you for completing the quiz!</h3>
+            <p>Your score: <span id="score"></span></p>
+        </div>
+
+    </div>
+    </main>
+
+    <footer>
+        <p>Made by: Muratova Dilnaz, Berentayeva Darina</p>
+    </footer>    
+
+    <script src="js/quiz.js"></script>
+</body>
+</html>
